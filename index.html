@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            background: #667eea;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        li {
+            background: #f4f5ff;
+            margin: 10px 0;
+            padding: 14px;
+            border-radius: 10px;
+            color: #333;
+            font-weight: bold;
+            border-left: 5px solid #667eea;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎓 Student List</h1>
+        <p>Enter a name and click the button</p>
+
+        <div class="input-box">
+            <input type="text" id="studentInput" placeholder="Enter student name">
+
+            <button onclick="addStudents()">Add</button>
+        </div>
+
+        <!-- Empty UL -->
+        <ul id="studentList"></ul>
+
+    </div>
+
+    <script>
+
+        function addStudents() {
+
+            // Get input value
+            let name = document.getElementById("studentInput").value;
+
+            // Create first student
+            let student1 = document.createElement("li");
+            student1.textContent = name || "Arun";
+
+            // Add first student to UL
+            document.getElementById("studentList").appendChild(student1);
+
+
+            // Create second student
+            let student2 = document.createElement("li");
+            student2.textContent = "Priya";
+
+            // Add second student to UL
+            document.getElementById("studentList").appendChild(student2);
+
+
+            // Create third student
+            let student3 = document.createElement("li");
+            student3.textContent = "Karthik";
+
+            // Add third student to UL
+            document.getElementById("studentList").appendChild(student3);
+        }
+
+    </script>
+
+</body>
+</html>
